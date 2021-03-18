@@ -3,8 +3,15 @@ import './style.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  // your config
+  apiKey: 'AIzaSyDR9pNCwDpngt4ylPfkxKDKL-Zmabcs2DM',
+  authDomain: 'webrtc-calling-5afd6.firebaseapp.com',
+  projectId: 'webrtc-calling-5afd6',
+  storageBucket: 'webrtc-calling-5afd6.appspot.com',
+  messagingSenderId: '831376177479',
+  appId: '1:831376177479:web:187a8167fc177340533462',
+  measurementId: 'G-E865Y4PDNZ',
 };
 
 if (!firebase.apps.length) {
@@ -38,7 +45,10 @@ const hangupButton = document.getElementById('hangupButton');
 // 1. Setup media sources
 
 webcamButton.onclick = async () => {
-  localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  localStream = await navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true,
+  });
   remoteStream = new MediaStream();
 
   // Push tracks from local stream to peer connection
