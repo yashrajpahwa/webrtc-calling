@@ -1,5 +1,3 @@
-import './style.css';
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -47,7 +45,7 @@ const hangupButton = document.getElementById('hangupButton');
 webcamButton.onclick = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: true,
+    audio: false,
   });
   remoteStream = new MediaStream();
 
